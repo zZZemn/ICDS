@@ -1,0 +1,46 @@
+.login-form {
+  max-width: 350px;
+  border-radius: 10px;
+}
+
+.btn-login {
+  margin: auto;
+}
+
+.alert-inc-pass {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  padding-top: 20px;
+}
+
+.input-container label {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  transition: 0.2s;
+  cursor: text;
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0);
+}
+
+.input-container input:not(:placeholder-shown) ~ label,
+.input-container input:focus ~ label {
+  font-size: 12px;
+  top: 5px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 350px) {
+  .login-form {
+    padding: 40px 20px !important;
+  }
+}
