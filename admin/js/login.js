@@ -12,14 +12,24 @@ $(document).ready(function () {
         password: password,
       },
       success: function (response) {
-        console.log(response);
         if (response === "Login success") {
+          Swal.fire({
+            icon: "success",
+            title: response,
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          }).then((result) => {
             window.location.href = 'dashboard.php';
+          });
         } else {
-          $(".alert-inc-pass").css("opacity", "1");
-          setTimeout(function () {
-            $(".alert-inc-pass").css("opacity", "0");
-          }, 2000);
+          Swal.fire({
+            icon: "error",
+            title: response,
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          });
         }
       },
     });
