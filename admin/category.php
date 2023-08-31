@@ -11,7 +11,7 @@ include('components/header.php');
 
 <main class="main" id="main">
     <div class="pagetitle">
-        <h1>Dashboard</h1>
+        <h1>Category</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
@@ -26,5 +26,5 @@ include('components/footer.php');
 ?>
 
 <script>
-    $('#nav-dashboard').addClass('nav-active')
+    $('#nav-category').addClass('nav-active')
 </script>
