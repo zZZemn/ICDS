@@ -131,8 +131,18 @@ body {
   text-decoration: none;
 }
 
-/* modal */
+/* dashboard */
+.dashboard .card-title,
+.dashboard i,
+.dashboard h1 {
+  color: #d64045;
+}
 
+.dashboard .col-xxl-4 {
+  margin-top: 20px;
+}
+
+/* modal */
 .modal-all {
   position: absolute;
   top: 20%;
@@ -181,7 +191,6 @@ body {
   }
 
   .card {
-    background-color: red;
     overflow-y: auto;
   }
 }

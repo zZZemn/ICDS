@@ -25,7 +25,7 @@ include('components/header.php');
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <button id="new_category" class="card-title btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#NewModal">New Category</button>
+                        <!-- <button id="new_category" class="card-title btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#NewModal">New Category</button> -->
                         <table class="table datatable" id="datatable">
                             <thead>
                                 <tr>
@@ -50,7 +50,10 @@ include('components/header.php');
                                         <td><?= ($row['status'] === 1) ? 'Active' : 'Deactivated' ?></td>
                                         <td>
                                             <button data-id="<?= $row['category_id'] ?>" data-idname="category_id" data-value="<?= $row['status'] ?>" data-table="category" class="change_status btn <?= ($row['status'] === 1) ? 'btn-danger' : 'btn-success' ?>">
-                                                <?= ($row['status'] === 1) ? 'Deactivate' : 'Activate' ?>
+                                                <?= ($row['status'] === 1) ? '<i class="fa-solid fa-user-xmark"></i>' : '<i class="fa-solid fa-user-check"></i>' ?>
+                                            </button>
+                                            <button data-id="<?= $row['category_id'] ?>" data-cat="<?= $row['category'] ?>" class="btn_edit btn btn-dark">
+                                                <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -67,7 +70,7 @@ include('components/header.php');
 </main>
 
 <!-- new modal -->
-<form class="modal-all new-modal" id="new_modal">
+<!-- <form class="modal-all new-modal" id="new_modal">
     <center class="m-3">New Category</center>
     <div class="container">
         <div class="input-container">
@@ -82,11 +85,29 @@ include('components/header.php');
         </div>
         <div class="modal-footer">
             <button type="submit" class="m-1 btn btn-success">Save</button>
-            <button type="reset" class="m-1 btn btn-secondary" id="close-modal">Close</button>
+            <button type="reset" class="m-1 btn btn-secondary close-modal" id="close-modal">Close</button>
+        </div>
+    </div>
+</form> -->
+<!-- end of new modal -->
+
+<!-- edit modal -->
+<form class="modal-all edit-modal needs-validation" id="edit_modal">
+    <center class="m-3">Edit Category</center>
+    <div class="container">
+        <input type="hidden" name="CatEditID" id="editID">
+        <div class="input-container">
+            <input type="text" class="form-control" pattern="[A-Za-z\s]+" name="EditCategory" id="EditCategory" required>
+            <label for="EditCategory">Category</label>
+            <div class="invalid-feedback">Please enter a valid Category! ex: Business.</div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="m-1 btn btn-success">Save</button>
+            <button type="reset" class="m-1 btn btn-secondary close-modal" id="close-modal">Close</button>
         </div>
     </div>
 </form>
-<!-- end of new modal -->
+<!-- end of edit modal -->
 
 <?php
 include('components/footer.php');
@@ -95,12 +116,22 @@ include('components/footer.php');
 <script>
     $('#nav-category').addClass('nav-active')
 
-    $('#close-modal').click(function(e) {
+    // close
+    $('.close-modal').click(function(e) {
         $('.modal-all').css('display', 'none');
     });
 
+    // add
     $('#new_category').click(function(e) {
         e.preventDefault();
         $('#new_modal').css('display', 'block');
+    });
+
+    // edit
+    $('.btn_edit').click(function(e) {
+        e.preventDefault();
+        $('#edit_modal').css('display', 'block');
+        $('#EditCategory').val($(this).data('cat'));
+        $('#editID').val($(this).data('id'));
     });
 </script>
