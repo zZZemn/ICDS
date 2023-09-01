@@ -11,7 +11,7 @@
     <link href="css/login.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
     <div class="container d-flex justify-content-center">
         <div class="alert-inc-pass position-absolute mt-3 alert alert-danger d-flex align-items-center" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
@@ -24,8 +24,8 @@
     </div>
 
     <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
-        <form class="login-form container bg-dark p-5" id="login-form">
-            <center class="text-light">ICDS</center>
+        <form class="login-form container bg-light p-5" id="login-form">
+            <center class="text-dark">ICDS</center>
             <div class="input-container mt-4">
                 <input type="text" required class="form-control" id="username" name="username" placeholder=".">
                 <label for="username">Username</label>
@@ -35,7 +35,7 @@
                 <label for="password">Password</label>
             </div>
             <div class="container d-flex mt-4">
-                <input type="submit" class="btn-login btn btn-primary" id="login" value="Login">
+                <input type="submit" class="btn-login btn btn-dark" id="login" value="Login">
             </div>
         </form>
     </div>

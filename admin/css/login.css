@@ -1,6 +1,16 @@
+body {
+  background-color: #d64045;
+}
+
 .login-form {
   max-width: 350px;
   border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.login-form center {
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .btn-login {
