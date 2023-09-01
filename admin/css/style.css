@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 .navigation {
   height: 60px;
   display: flex;
@@ -91,8 +95,11 @@
   left: 255px;
   top: 65px;
   transition: all 0.3s;
-  width: calc(100vw - 260px);
+  width: calc(100vw - 280px);
   box-shadow: 1px 1px 5px rgb(184, 184, 184);
+  max-height: 89vh;
+
+  overflow-y: auto;
 }
 
 .pagetitle {
@@ -124,10 +131,57 @@
   text-decoration: none;
 }
 
+/* modal */
+
+.modal-all {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  background-color: white;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 10px;
+  padding: 10px;
+
+  display: none;
+}
+
+.modal-all center {
+  font-weight: 600;
+  color: #d64045;
+}
+
+/* input-style */
+.input-container {
+  position: relative;
+  margin: 10px;
+}
+
+.input-container input {
+  padding-top: 17px;
+  font-size: 15px;
+}
+
+.input-container label {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #d64045;
+}
+
 @media (max-width: 900px) {
   .main {
     left: 10px;
     width: calc(100vw - 20px);
     z-index: -1;
+  }
+
+  .card {
+    background-color: red;
+    overflow-y: auto;
   }
 }

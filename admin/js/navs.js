@@ -34,5 +34,5 @@ $(document).ready(function () {
     checkWindowWidth();
   });
 
-  $('#datatable').DataTable();
+  $("#datatable").DataTable();
 });

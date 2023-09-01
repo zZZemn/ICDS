@@ -31,6 +31,7 @@ include('components/header.php');
                                     <th>#</th>
                                     <th>Username</th>
                                     <th>Name</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -45,7 +46,12 @@ include('components/header.php');
                                         <td><?= $num_row ?></td>
                                         <td><?= $row['username'] ?></td>
                                         <td><?= $row['name'] ?></td>
-                                        <td>Deactivate</td>
+                                        <td><?= ($row['status'] === 1) ? 'Active' : 'Deactivated' ?></td>
+                                        <td>
+                                            <button data-id="<?= $row['user_id'] ?>" data-idname="user_id" data-value="<?= $row['status'] ?>" data-table="user" class="change_status btn <?= ($row['status'] === 1) ? 'btn-danger' : 'btn-success' ?>">
+                                                <?= ($row['status'] === 1) ? 'Deactivate' : 'Activate' ?>
+                                            </button>
+                                        </td>
                                     </tr>
                                 <?php
                                 }
