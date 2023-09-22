@@ -10,10 +10,16 @@ if (isset($_POST['username'], $_POST['password'], $_POST['userType'])) {
     $sql = $db->login($userType, $username);
     if ($sql->num_rows > 0) {
         $user = $sql->fetch_array();
-        $user_password = $user['PASSWORD'];
+        $user_password = $user['password'];
         if (password_verify($password, $user_password)) {
             session_start();
-            $_SESSION['id'] = $user['ID'];
+            if ($userType === 'admin') {
+                $_SESSION['id'] = $user['id'];
+            } elseif ($userType === 'store') {
+                $_SESSION['store_id'] = $user['store_id'];
+            } else {
+                $_SESSION['user_id'] = $user['user_id'];
+            }
             echo 'Login success';
         } else {
             echo 'Login failed';
