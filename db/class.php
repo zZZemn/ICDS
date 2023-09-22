@@ -112,3 +112,21 @@ class admin_class extends db_connect
         }
     }
 }
+
+
+class stores_class extends db_connect
+{
+    public function __construct()
+    {
+        $this->connect();
+    }
+
+    public function storeRegisterValidation($field, $data)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `store` WHERE `$field` = '$data'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+}
