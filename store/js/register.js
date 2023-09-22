@@ -19,10 +19,9 @@ $(document).ready(function () {
             showConfirmButton: false,
             timer: 1500,
             timerProgressBar: true,
+          }).then((result) => {
+            window.location.href = "login.php";
           });
-          //   .then((result) => {
-          //     window.location.href = "dashboard.php";
-          //   });
         } else {
           Swal.fire({
             icon: "error",

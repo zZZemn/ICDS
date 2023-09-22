@@ -154,8 +154,9 @@ class stores_class extends db_connect
             $file_tmp = $files['tmp_name'];
             $extension = pathinfo($file_name, PATHINFO_EXTENSION);
             if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
-                $newFileName = $storeID . "." . $extension;
-                $destination = "../global-assets/store-logos/" . $newFileName;
+                $destinationDirectory = __DIR__ . '/../global-assets/store-logos/';
+                $newFileName = $storeID . '.' . $extension;
+                $destination = $destinationDirectory . $newFileName;
                 if (is_uploaded_file($file_tmp)) {
                     if (move_uploaded_file($file_tmp, $destination)) {
                         $query = $this->conn->prepare("INSERT INTO `store`(`store_id`, `username`, `password`, `name`, `contact_no`, `email`, `address`, `logo`, `category_id`, `status`) 
