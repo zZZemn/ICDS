@@ -1,0 +1,105 @@
+.navigation {
+  position: sticky;
+  top: 0;
+  background-color: #d64045;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  z-index: 10;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-container {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  max-width: 700px;
+}
+.btns-container button,
+a {
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.btns-container button:hover,
+a:hover {
+  background-color: #e65156;
+}
+
+input {
+  margin: 5px;
+}
+
+.f-container .f-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.f-container .f-row h1 {
+  color: #d64045;
+}
+
+.f-container .f-row h5 span {
+  font-size: 30px;
+}
+
+/*  */
+
+.f-container .s-row {
+  margin-top: 20px;
+  display: flex;
+}
+
+.f-container .t-row,
+.f-container .frth-row {
+  display: flex;
+}
+
+.pictures-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pictures-container img {
+  margin: 5px;
+  border: 1px solid black;
+}
+
+/*  */
+
+@media screen and (max-width: 400px) {
+  .f-container .f-row {
+    flex-direction: column;
+  }
+
+  .f-container .f-row img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .f-container .f-row h1 {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+
+  .f-container .f-row h5 {
+    font-size: 15px;
+  }
+  .f-container .f-row h5 span {
+    font-size: 20px;
+  }
+
+  .f-container .t-row,
+  .f-container .frth-row {
+    flex-wrap: wrap;
+  }
+}

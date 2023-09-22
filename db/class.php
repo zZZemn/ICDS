@@ -183,3 +183,21 @@ class stores_class extends db_connect
         }
     }
 }
+
+
+class global_class extends db_connect
+{
+    public function __construct()
+    {
+        $this->connect();
+    }
+
+    public function getNumberOfRatings($id)
+    {
+        $query = $this->conn->prepare("SELECT COUNT(*) as TOTAL_RATINGS FROM `rating_reviews` WHERE `store_id` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+}
