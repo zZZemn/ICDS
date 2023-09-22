@@ -32,6 +32,7 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
@@ -39,9 +40,9 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
     <nav class="navigation">
         <h3><a href="#">ICDS</a></h3>
         <div class="btns-container">
-            <button type="button">New Photo</button>
-            <button type="button">New Link</button>
-            <button type="button">Edit</button>
+            <button type="button" id="btnNewPhoto">New Photo</button>
+            <button type="button" id="btnNewLink">New Link</button>
+            <button type="button" id="btnEdit">Edit</button>
             <a class="btn-logout" href="process/logout.php">Logout</a>
         </div>
     </nav>
@@ -70,26 +71,90 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
         <hr>
         <div class="s-container">
             <h5>Links</h5>
-            <ul>
-                <li>Facebook: <a href="#">links</a></li>
-                <li>Facebook: <a href="#">links</a></li>
-                <li>Facebook: <a href="#">links</a></li>
-            </ul>
+            <?php
+            $getLinks = $global_db->getStoresLinks($id);
+            if ($getLinks->num_rows > 0) {
+            ?>
+                <ul class="links-ul-container">
+                    <?php
+                    while ($links = $getLinks->fetch_array()) {
+                    ?>
+                        <li><?= $links['link_name'] ?>: <a href="<?= $links['link'] ?>"><?= $links['link'] ?></a></li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+            <?php
+            } else {
+            ?>
+                <center>No link found</center>
+            <?php
+            }
+            ?>
         </div>
         <hr>
         <div class="t-container">
             <h5>Pictures</h5>
             <div class="pictures-container">
-                <img src="../global-assets/store-logos/12719_store_75613.jpg">
-                <img src="../global-assets/store-logos/12719_store_75613.jpg">
-                <img src="../global-assets/store-logos/12719_store_75613.jpg">
-                <img src="../global-assets/store-logos/12719_store_75613.jpg">
+                <?php
+                $getPhotos = $global_db->getStorePhotos($id);
+                if ($getPhotos->num_rows > 0) {
+                    while ($photo = $getPhotos->fetch_array()) {
+                ?>
+                        <img src="../global-assets/store-photos/<?= $photo['photo'] ?>">
+                    <?php
+                    }
+                } else {
+                    ?>
+                    <center>No photo found</center>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
 
+    <!-- New Link Modal -->
+    <form id="frmNewLink" class="frm-new-link card p-5">
+        <center>
+            <h5>Add Link</h5>
+        </center>
+        <input type="hidden" class="storeId" name="store_id" value="<?= $id ?>">
+        <div class="input-container">
+            <label for="linkName">Link Name</label>
+            <input type="text" id="linkName" name="linkName" class="form-control" required>
+        </div>
+        <div class="input-container">
+            <label for="link">Link</label>
+            <input type="text" id="link" name="link" class="form-control" required>
+        </div>
+        <div class="frm-btns-container">
+            <button type="reset" id="cancelFrmNewLink" class="btn btn-dark">Cancel</button>
+            <button type="submit" id="addLink" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+    <!-- End Of  New Link Modal -->
+
+    <!-- New Photo Modal -->
+    <form id="frmPhoto" class="frm-new-photo card p-5">
+        <center>
+            <h5>Add Photo</h5>
+        </center>
+        <input type="hidden" class="storeId" name="store_id" value="<?= $id ?>">
+        <div class="input-container">
+            <label for="photo">Upload Photo</label>
+            <input type="file" id="photo" name="photo" class="form-control" required>
+        </div>
+        <div class="frm-btns-container">
+            <button type="reset" id="cancelFrmPhoto" class="btn btn-dark">Cancel</button>
+            <button type="submit" id="addPhoto" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+    <!-- End Of New Photo Modal -->
+
     <script src="https://kit.fontawesome.com/c6c8edc460.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>

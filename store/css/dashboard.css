@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(245, 222, 179, 0);
+}
+
 .navigation {
   position: sticky;
   top: 0;
@@ -7,6 +11,8 @@
   align-items: center;
   padding: 5px 20px;
   z-index: 10;
+
+  flex-wrap: wrap;
 }
 
 .navigation a {
@@ -63,6 +69,18 @@ input {
   display: flex;
 }
 
+.s-container .links-ul-container li a {
+  color: blue;
+}
+
+.s-container .links-ul-container li a:hover {
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.s-container .links-ul-container li {
+  margin-top: 10px;
+}
+
 .pictures-container {
   display: flex;
   flex-wrap: wrap;
@@ -70,8 +88,61 @@ input {
 }
 
 .pictures-container img {
-  margin: 5px;
   border: 1px solid black;
+  margin: 5px;
+  height: 150px !important;
+  width: 150px !important;
+}
+
+/*  */
+
+.frm-new-link {
+  max-width: 300px;
+  margin: auto;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: none;
+}
+
+.frm-new-link .input-container {
+  position: relative;
+  margin-top: 10px;
+}
+
+.frm-new-link .input-container label {
+  position: absolute;
+  left: 15px;
+  top: -5px;
+  font-size: 12px;
+  background-color: white;
+  padding: 0px 10px;
+}
+
+.frm-btns-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.frm-btns-container button,
+.frm-btns-container input {
+  margin: 5px;
+}
+
+/*  */
+
+.frm-new-photo {
+  max-width: 300px;
+  margin: auto;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: none;
 }
 
 /*  */

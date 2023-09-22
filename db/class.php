@@ -182,6 +182,52 @@ class stores_class extends db_connect
             return 'File is empty';
         }
     }
+
+    public function addNewLink($id, $link, $linkName)
+    {
+        $query = $this->conn->prepare("INSERT INTO `links`(`store_id`, `link_name`, `link`) 
+                                                   VALUES ('$id','$linkName','$link')");
+        if ($query->execute()) {
+            return 200;
+        } else {
+            return 404;
+        }
+    }
+
+    public function addNewPhoto($id, $photo)
+    {
+        $photoId = mt_rand(10000, 99999);
+        if (!empty($_FILES['photo']['size'])) {
+            $file_name = $photo['name'];
+            $file_tmp = $photo['tmp_name'];
+            $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+            if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
+                $destinationDirectory = __DIR__ . '/../global-assets/store-photos/';
+                $newFileName = $photoId . '.' . $extension;
+                $destination = $destinationDirectory . $newFileName;
+                if (is_uploaded_file($file_tmp)) {
+                    if (move_uploaded_file($file_tmp, $destination)) {
+                        $query = $this->conn->prepare("INSERT INTO `photos`(`id`, `store_id`, `photo`) VALUES ('$photoId','$id','$newFileName')");
+                        if ($query->execute()) {
+                            return 200;
+                        } else {
+                            return 405;
+                        }
+                    } else {
+                        return 'Uploading file unsuccessfull';
+                    }
+                } else {
+                    return "Error: File upload failed or file not found.";
+                }
+            } else {
+                // file type not valid
+                return 'Invalid file type';
+            }
+        } else {
+            // empty file
+            return 'File is empty';
+        }
+    }
 }
 
 
@@ -195,6 +241,24 @@ class global_class extends db_connect
     public function getNumberOfRatings($id)
     {
         $query = $this->conn->prepare("SELECT COUNT(*) as TOTAL_RATINGS FROM `rating_reviews` WHERE `store_id` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function getStoresLinks($id)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `links` WHERE `store_id` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function getStorePhotos($id)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `photos` WHERE `store_id` = '$id'");
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;
