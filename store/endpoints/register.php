@@ -10,6 +10,12 @@ if (isset($_POST['username'], $_POST['storeName'])) {
     } elseif ($validateStoreName->num_rows > 0) {
         echo 'Establishment Exist';
     } else {
-        echo 'Registration Success!';
+        $files = $_FILES['storeLogo'];
+        $registerStore = $db->storeRegistration($_POST, $files);
+        if ($registerStore === 200) {
+            echo 'Registration Success!';
+        } else {
+            echo $registerStore;
+        }
     }
 }

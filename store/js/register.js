@@ -2,11 +2,13 @@ $(document).ready(function () {
   $("#frmRegister").submit(function (e) {
     e.preventDefault();
     console.log("submitted");
-    var formData = $(this).serialize();
+    var formData = new FormData($(this)[0]);
 
     $.ajax({
       type: "POST",
       url: "endpoints/register.php",
+      processData: false, // Prevent jQuery from processing the data
+      contentType: false, // Prevent jQuery from setting the content type
       data: formData,
       success: function (response) {
         console.log(response);

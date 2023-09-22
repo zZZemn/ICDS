@@ -20,9 +20,9 @@ $admin_db = new admin_class;
 <body>
     <div class="container mt-5">
         <form id="frmRegister" class="frm-register card p-5">
-            <h1>
+            <h3>
                 <center class="card-title">Register Establishment</center>
-            </h1>
+            </h3>
             <div class="input-container">
                 <label for="storeName">Establishment Name</label>
                 <input type="text" id="storeName" name="storeName" class="form-control" required>

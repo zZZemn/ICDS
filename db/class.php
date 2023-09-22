@@ -129,4 +129,56 @@ class stores_class extends db_connect
             return $result;
         }
     }
+
+    public function storeRegistration($post, $files)
+    {
+        $storeName = $post['storeName'];
+        $address = $post['address'];
+        $email = $post['email'];
+        $contactNo = $post['contactNo'];
+        $category = $post['category'];
+        $username = $post['username'];
+        $password = $post['password'];
+        // $logo = $files['storeLogo']['name'];
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        // store id
+        $storeID = mt_rand(10000, 99999) . '_store_' . mt_rand(10000, 99999);
+        $checkStoreID = $this->storeRegisterValidation('store_id', $storeID);
+        while ($checkStoreID->num_rows > 0) {
+            $storeID = mt_rand(10000, 99999) . '_store_' . mt_rand(10000, 99999);
+            $checkStoreID = $this->storeRegisterValidation('store_id', $storeID);
+        }
+
+        if (!empty($_FILES['storeLogo']['size'])) {
+            $file_name = $files['name'];
+            $file_tmp = $files['tmp_name'];
+            $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+            if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
+                $newFileName = $storeID . "." . $extension;
+                $destination = "../global-assets/store-logos/" . $newFileName;
+                if (is_uploaded_file($file_tmp)) {
+                    if (move_uploaded_file($file_tmp, $destination)) {
+                        $query = $this->conn->prepare("INSERT INTO `store`(`store_id`, `username`, `password`, `name`, `contact_no`, `email`, `address`, `logo`, `category_id`, `status`) 
+                                                   VALUES ('$storeID','$username','$hashedPassword','$storeName','$contactNo','$email','$address','$newFileName','$category','1')");
+                        if ($query->execute()) {
+                            return 200;
+                        } else {
+                            return 405;
+                        }
+                    } else {
+                        // upload unsuccessfull
+                        return 'Uploading file unsuccessfull';
+                    }
+                } else {
+                    return "Error: File upload failed or file not found.";
+                }
+            } else {
+                // file type not valid
+                return 'Invalid file type';
+            }
+        } else {
+            // empty file
+            return 'File is empty';
+        }
+    }
 }
