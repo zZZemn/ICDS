@@ -38,11 +38,11 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
 
 <body class="">
     <nav class="navigation">
-        <h3><a href="#">ICDS</a></h3>
+        <h3><a href="dashboard.php">ICDS</a></h3>
         <div class="btns-container">
             <button type="button" id="btnNewPhoto">New Photo</button>
             <button type="button" id="btnNewLink">New Link</button>
-            <button type="button" id="btnEdit">Edit</button>
+            <a href="edit-contens.php" id="btnEdit">Edit</a>
             <a class="btn-logout" href="process/logout.php">Logout</a>
         </div>
     </nav>

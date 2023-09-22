@@ -228,6 +228,24 @@ class stores_class extends db_connect
             return 'File is empty';
         }
     }
+
+    public function updateStoreDetails($post)
+    {
+        $storeId = $post['storeIdEdit'];
+        $storeName = $post['storeName'];
+        $address = $post['address'];
+        $email = $post['email'];
+        $contactNo = $post['contactNo'];
+        $username = $post['username'];
+        $category = $post['category'];
+
+        $query = $this->conn->prepare("UPDATE `store` SET `username`='$username', `name`='$storeName', `contact_no`='$contactNo', `email`='$email', `address`='$address', `category_id`='$category' WHERE `store_id` = '$storeId'");
+        if ($query->execute()) {
+            return 200;
+        } else {
+            return 404;
+        }
+    }
 }
 
 

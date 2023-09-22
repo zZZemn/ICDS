@@ -92,4 +92,22 @@ $(document).ready(function () {
       },
     });
   });
+
+  $("#frmEditEstablishment").submit(function (e) {
+    e.preventDefault();
+    var formData = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "endpoints/submit.php",
+      data: formData,
+      success: function (response) {
+        console.log(response);
+        if (response === "Establishment Details Edited!") {
+          successAlert(response);
+        } else {
+          dangerAlert(response);
+        }
+      },
+    });
+  });
 });

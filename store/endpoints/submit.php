@@ -16,6 +16,13 @@ if (isset($_POST['store_id'], $_POST['link'], $_POST['linkName'])) {
     } else {
         echo $addPhoto;
     }
+} elseif (isset($_POST['storeIdEdit'])) {
+    $updateStore = $db->updateStoreDetails($_POST);
+    if ($updateStore === 200) {
+        echo 'Establishment Details Edited!';
+    } else {
+        echo 'Something Went Wrong';
+    }
 } else {
     echo 'not set';
 }
