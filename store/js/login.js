@@ -8,7 +8,7 @@ $(document).ready(function () {
       type: "POST",
       url: "../global-assets/endpoints/login.php",
       data: {
-        userType: 'admin',
+        userType: 'store',
         username: username,
         password: password,
       },
@@ -21,7 +21,7 @@ $(document).ready(function () {
             timer: 1500,
             timerProgressBar: true,
           }).then((result) => {
-            window.location.href = 'dashboard.php';
+            window.location.href = "dashboard.php";
           });
         } else {
           Swal.fire({
