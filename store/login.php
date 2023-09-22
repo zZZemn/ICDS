@@ -34,7 +34,7 @@
                 <input type="password" required class="form-control" id="password" name="password" placeholder=".">
                 <label for="password">Password</label>
             </div>
-            <span class="dont-have-account" style="font-size: 12px;">Don't have an account? <a href="#" class="btn-register">Register</a></span>
+            <span class="dont-have-account" style="font-size: 12px;">Don't have an account? <a href="register.php" class="btn-register">Register</a></span>
             <div class="container d-flex mt-4">
                 <input type="submit" class="btn-login btn btn-dark" id="login" value="Login">
             </div>

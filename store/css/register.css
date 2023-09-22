@@ -1,0 +1,21 @@
+body {
+    background-color: #d64045;
+}
+
+.frm-register {
+    margin: auto;
+  max-width: 600px;
+}
+
+.input-container-container {
+  flex-wrap: wrap;
+}
+
+.input-container-container .input-container input,
+.input-container-container .input-container select {
+  max-width: 200px;
+}
+
+.btn-container {
+    flex-wrap: wrap-reverse;
+}
