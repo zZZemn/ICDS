@@ -55,11 +55,11 @@ include('components/header.php');
                                             <button data-id="<?= $row['store_id'] ?>" data-idname="store_id" data-value="<?= $row['status'] ?>" data-table="store" class="change_status btn <?= ($row['status'] === 1) ? 'btn-danger' : 'btn-success' ?>">
                                                 <?= ($row['status'] === 1) ? '<i class="fa-solid fa-x"></i>' : '<i class="fa-solid fa-check"></i>' ?>
                                             </button>
-                                            <button 
-                                            data-id="<?= $row['store_id'] ?>"  
+                                            <!-- <button 
+                                            data-id=""  
                                             class="btn_edit btn btn-dark">
                                                 <i class="fa-solid fa-pen-to-square"></i>
-                                            </button>
+                                            </button> -->
                                         </td>
                                     </tr>
                                 <?php
