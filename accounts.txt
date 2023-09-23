@@ -1,0 +1,7 @@
+Admin Login - http://localhost/icds/admin/login.php
+username - admin
+password - password 
+
+
+Store Login - http://localhost/icds/store/login.php
+Register Store - http://localhost/icds/store/register.php
