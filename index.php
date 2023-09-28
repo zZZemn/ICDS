@@ -31,5 +31,22 @@ $admin_db = new admin_class();
     </div>
 </div>
 
+<div class="main-categories-container">
+    <h3>Our Categories</h3>
+    <div class="container categories-container">
+        <?php
+        $getCategory = $admin_db->admin_Get_Categories();
+        while ($category = $getCategory->fetch_array()) {
+        ?>
+            <a href="#" class="btn-category">
+                <i><?= $category['icon'] ?></i>
+                <p><?= $category['category'] ?></p>
+            </a>
+        <?php
+        }
+        ?>
+    </div>
+</div>
+
 <?php
 include('user-components/footer.php');
