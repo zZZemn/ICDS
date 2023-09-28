@@ -1,3 +1,7 @@
+<?php
+include('db/class.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +19,7 @@
 
 <body>
     <nav class="nav-container">
+        <button type="button" id="toggleNav" class="toggle-nav"><i class="fa-solid fa-bars"></i></button>
         <img src="../../global-assets/store-logos/12719_store_75613.jpg">
         <div class="nav-links">
             <a href="#">Home</a>
@@ -24,5 +29,5 @@
             <a href="#">Contacts</a>
             <a href="#">Meet our Team</a>
         </div>
-        <a href="#">Login</a>
+        <a href="#" class="a-login">Login</a>
     </nav>
