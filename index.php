@@ -39,7 +39,7 @@ $admin_db = new admin_class();
         while ($category = $getCategory->fetch_array()) {
         ?>
             <a href="#" class="btn-category">
-                <i><?= $category['icon'] ?></i>
+                <?= $category['icon'] ?>
                 <p><?= $category['category'] ?></p>
             </a>
         <?php
