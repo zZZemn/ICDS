@@ -22,8 +22,8 @@ include('db/class.php');
         <button type="button" id="toggleNav" class="toggle-nav"><i class="fa-solid fa-bars"></i></button>
         <img src="../../global-assets/store-logos/12719_store_75613.jpg">
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Categories</a>
+            <a href="index.php">Home</a>
+            <a href="categories.php">Categories</a>
             <a href="#">About us</a>
             <a href="#">Blogs</a>
             <a href="#">Contacts</a>
