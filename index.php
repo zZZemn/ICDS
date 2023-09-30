@@ -46,7 +46,7 @@ $admin_db = new admin_class();
         }
         ?>
     </div>
-    <center><a href="#" class="read-more">Browse categories >></a></center>
+    <center><a href="#" class="read-more mt-5">Browse categories >></a></center>
 </div>
 
 <div class="about-us-container">
@@ -99,6 +99,37 @@ $admin_db = new admin_class();
                 <p class="blog-content-para">A job fair is an event where multiple recruiters, hiring managers and employers can meet with potential employees in one convenient, neutral venue, such as a school or college. These fairs are usually managed by third-party recruitment consultants.</p>
                 <a href="#" class="read-more">READ MORE -></a>
             </div>
+        </div>
+    </div>
+    <center>
+        <h5 class="read-more mt-4">Browse blogs >></h5>
+    </center>
+</div>
+
+<div class="main-page-footer">
+    <img src="global-assets/assets-used-in-web/footer-banner.png">
+    <div class="container mpf-container">
+        <div class="mpf-1st">
+            <h5>DIRECTORY</h5>
+            <p>a book listing individuals or organizations alphabetically or thematically with details such as names, addresses, and phone numbers.</p>
+            <div class="mpf-1st-links">
+                <a><i class="fa-brands fa-square-facebook"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="mpf-2nd">
+            <h5>QUICK LINKS</h5>
+            <p><a href="#">Home</a></p>
+            <p><a href="#">Directory</a></p>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Blogs</a></p>
+            <p><a href="#">Contacts</a></p>
+        </div>
+        <div class="mpf-3rd">
+            <h5>OTHERS</h5>
+            <p>Luna St. Gaisano lapaz , Iloilo City 5000.</p>
+            <p>ICDS38@Gmail.com</p>
         </div>
     </div>
 </div>
