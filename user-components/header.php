@@ -16,6 +16,7 @@ include('db/class.php');
     </style>
     <link rel="stylesheet" href="user-css/styles.css">
     <link rel="stylesheet" href="user-css/categories.css">
+    <link rel="stylesheet" href="user-css/blogs.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@ include('db/class.php');
             <a href="index.php">Home</a>
             <a href="categories.php">Categories</a>
             <a href="#">About us</a>
-            <a href="#">Blogs</a>
+            <a href="blogs.php">Blogs</a>
             <a href="#">Contacts</a>
             <a href="#">Meet our Team</a>
         </div>

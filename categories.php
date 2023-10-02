@@ -35,17 +35,20 @@ if (isset($_GET['category'])) {
             <h5>LISTING CATEGORIES</h5>
             <div class="cpc-categories-container">
                 <?php
-                $getCategories = $global_db->getCatregories();
-                while ($category = $getCategories->fetch_array()) {
-                    ?>
-<a href="#">
-    <h5><?= $category['category'] ?></h5>
-    <h5><?= $category['total_store'] ?></h5>
-</a>
-                    <?php
-                }
+                // $getCategories = $global_db->getCatregories();
+                // while ($category = $getCategories->fetch_array()) {
+                ?>
+                    <!-- <a href="#">
+                        <h5></h5>
+                        <h5></h5>
+                    </a> -->
+                <?php
+                // }
                 ?>
             </div>
         </div>
     </div>
 </div>
+
+<?php
+include('user-components/footer.php');
