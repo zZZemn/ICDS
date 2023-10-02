@@ -1,0 +1,24 @@
+.categories-page-container {
+  position: relative;
+}
+
+.categories-page-container .cpc-top-container {
+  background-color: black;
+}
+
+.categories-page-container .cpc-top-container img {
+  width: 100%;
+  height: 200px;
+  opacity: 0.2;
+}
+
+.category-label-h5 {
+  color: white;
+  position: absolute;
+  z-index: 10;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 40px;
+  font-weight: 600;
+}

@@ -15,6 +15,7 @@ include('db/class.php');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
     </style>
     <link rel="stylesheet" href="user-css/styles.css">
+    <link rel="stylesheet" href="user-css/categories.css">
 </head>
 
 <body>

@@ -282,4 +282,22 @@ class global_class extends db_connect
             return $result;
         }
     }
+
+    public function getSelectedCategory($id)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `category` WHERE `category` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function getCatregories()
+    {
+        $query = $this->conn->prepare("SELECT c.*, COUNT(s.*) as total_store FROM `category` c LEFT JOIN `store` s ON c.category_id = s.category_id");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
 }
