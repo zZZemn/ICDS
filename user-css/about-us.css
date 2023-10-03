@@ -1,0 +1,130 @@
+.about-us-f-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.aufrow-left-container {
+  width: 400px;
+}
+
+.aufrow-left-container h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4b4b4b;
+}
+
+.aufrow-left-container p {
+  font-size: 13px;
+  color: #4b4b4b;
+}
+
+.aufrow-right-container {
+  position: relative;
+}
+
+.aufrow-right-container img {
+  height: 100%;
+  width: 100%;
+}
+
+/*  */
+
+.promote-bus-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.promote-bus-container .promote-bus-content-container {
+  margin: 10px;
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  color: #4b4b4b;
+}
+
+.promote-bus-container .promote-bus-content-container h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.promote-bus-container .promote-bus-content-container p {
+  font-size: 13px;
+}
+
+/*  */
+.out-team-h2-container h2 {
+  font-weight: 600;
+  color: #4b4b4b;
+}
+
+.our-team-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.profile-container {
+  background-color: #d64045;
+  width: 200px;
+  position: relative;
+  height: 250px;
+  margin-top: 20px;
+}
+
+.profile-container .cover-photo {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+}
+
+.profile-container .profile-picture {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-container .profile-details-container {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.profile-details-container h5 {
+  font-size: 15px;
+}
+
+.profile-details-container p {
+  font-size: 12px;
+}
+
+.btn-more-details {
+  background-color: #ffffff;
+  color: #d64045;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 990px) {
+  .about-us-f-row {
+    justify-content: center;
+  }
+
+  .aufrow-left-container {
+    width: 100%;
+  }
+
+  /*  */
+}

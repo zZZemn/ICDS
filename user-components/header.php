@@ -1,5 +1,11 @@
 <?php
 include('db/class.php');
+
+$isLogin = false;
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $isLogin = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +23,7 @@ include('db/class.php');
     <link rel="stylesheet" href="user-css/styles.css">
     <link rel="stylesheet" href="user-css/categories.css">
     <link rel="stylesheet" href="user-css/blogs.css">
+    <link rel="stylesheet" href="user-css/about-us.css">
 </head>
 
 <body>
@@ -26,10 +33,10 @@ include('db/class.php');
         <div class="nav-links">
             <a href="index.php">Home</a>
             <a href="categories.php">Categories</a>
-            <a href="#">About us</a>
+            <a href="about-us.php">About us</a>
             <a href="blogs.php">Blogs</a>
             <a href="#">Contacts</a>
-            <a href="#">Meet our Team</a>
+            <!-- <a href="#">Meet our Team</a> -->
         </div>
-        <a href="#" class="a-login">Login</a>
+        <?= ($isLogin) ? '<a href="#" class="a-login">Logout</a>' : '<a href="login.php" class="a-login">Login</a>' ?>
     </nav>
