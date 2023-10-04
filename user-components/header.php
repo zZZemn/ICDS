@@ -1,6 +1,7 @@
 <?php
 include('db/class.php');
 
+session_start();
 $isLogin = false;
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
@@ -38,5 +39,5 @@ if (isset($_SESSION['user_id'])) {
             <a href="#">Contacts</a>
             <!-- <a href="#">Meet our Team</a> -->
         </div>
-        <?= ($isLogin) ? '<a href="#" class="a-login">Logout</a>' : '<a href="login.php" class="a-login">Login</a>' ?>
+        <?= ($isLogin) ? '<a href="user-endpoints/logout.php" class="a-login">Logout</a>' : '<a href="login.php" class="a-login">Login</a>' ?>
     </nav>

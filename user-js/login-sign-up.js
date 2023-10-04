@@ -33,4 +33,36 @@ $(document).ready(function () {
       console.log("Signup Complete");
     }
   });
+
+  $("#frmLogin").submit(function (e) {
+    e.preventDefault();
+    var formData = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "user-endpoints/form-submit.php",
+      data: formData,
+      success: function (response) {
+        console.log(response);
+        if (response === "200") {
+          Swal.fire({
+            icon: "success",
+            title: "Login success!",
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          }).then((result) => {
+            window.location.href = "index.php";
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Wrong email or password!",
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          });
+        }
+      },
+    });
+  });
 });

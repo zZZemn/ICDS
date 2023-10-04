@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit;
@@ -13,6 +14,7 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ICDS | Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="user-css/login-signup.css">
 </head>
@@ -20,7 +22,7 @@ if (isset($_SESSION['user_id'])) {
 <body>
     <div class="container login-container">
         <div class="login-left-container">
-            <form class="container frm-login">
+            <form class="container frm-login" id="frmLogin">
                 <h1>Sign in</h1>
                 <div class="input-container">
                     <label for="username">Username</label>
