@@ -1,12 +1,18 @@
 <?php
 include('db/class.php');
+$global_db = new global_class();
 
 session_start();
 $isLogin = false;
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
     $isLogin = true;
+    $getUserDetails = $global_db->getUserDetails($user_id);
+    $user = $getUserDetails->fetch_array();
+    $name = $user['name'];
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,5 +45,5 @@ if (isset($_SESSION['user_id'])) {
             <a href="#">Contacts</a>
             <!-- <a href="#">Meet our Team</a> -->
         </div>
-        <?= ($isLogin) ? '<a href="user-endpoints/logout.php" class="a-login">Logout</a>' : '<a href="login.php" class="a-login">Login</a>' ?>
+        <?= ($isLogin) ? '<a href="user-endpoints/logout.php" class="a-login">Logout | ' . $name . '</a>' : '<a href="login.php" class="a-login">Login</a>' ?>
     </nav>

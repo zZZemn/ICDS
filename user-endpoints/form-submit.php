@@ -3,7 +3,13 @@ include('../db/class.php');
 $db = new global_class();
 $admin_db = new admin_class();
 
-if (isset($_POST['username'], $_POST['password'])) {
+if (isset($_POST['name'], $_POST['username'], $_POST['password'], $_POST['repassword'])) {
+    if ($db->signup($_POST) === 200) {
+        echo 'sign up completed!';
+    } else {
+        echo 'Something went wrong :<';
+    }
+} elseif (isset($_POST['username'], $_POST['password'])) {
     $userLogin = $admin_db->login('user', $_POST['username']);
     if ($userLogin->num_rows > 0) {
         $user = $userLogin->fetch_array();

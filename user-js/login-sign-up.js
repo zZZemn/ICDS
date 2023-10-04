@@ -30,7 +30,34 @@ $(document).ready(function () {
     if (pass1 !== pass2) {
       $("#repassword").addClass("is-invalid");
     } else {
-      console.log("Signup Complete");
+      var formData = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: "user-endpoints/form-submit.php",
+        data: formData,
+        success: function (response) {
+          console.log(response);
+          if (response == "sign up completed!") {
+            Swal.fire({
+              icon: "success",
+              title: response,
+              showConfirmButton: false,
+              timer: 1500,
+              timerProgressBar: true,
+            }).then((result) => {
+              window.location.href = "index.php";
+            });
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: response,
+              showConfirmButton: false,
+              timer: 1500,
+              timerProgressBar: true,
+            });
+          }
+        },
+      });
     }
   });
 

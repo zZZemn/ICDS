@@ -300,4 +300,41 @@ class global_class extends db_connect
             return $result;
         }
     }
+
+    public function checkUserId($id)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `user` WHERE 'user_id' = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function signup($post)
+    {
+        $userName = $post['username'];
+        $name = $post['name'];
+        $password = $post['password'];
+
+        $userId = 'user_' . rand(10000, 99999);
+        while ($this->checkUserId($userId)->num_rows > 0) {
+            $userId = 'user_' . rand(10000, 999999);
+        }
+
+        $query = $this->conn->prepare("INSERT INTO `user`(`user_id`, `username`, `password`, `name`, `status`) VALUES ('$userId','$userName','$password','$name','1')");
+        if ($query->execute()) {
+            return 200;
+        } else {
+            return 400;
+        }
+    }
+
+    public function getUserDetails($id)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `user` WHERE `user_id` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
 }
