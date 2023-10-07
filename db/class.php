@@ -285,7 +285,7 @@ class global_class extends db_connect
 
     public function getSelectedCategory($id)
     {
-        $query = $this->conn->prepare("SELECT * FROM `category` WHERE `category` = '$id'");
+        $query = $this->conn->prepare("SELECT * FROM `category` WHERE `category_id` = '$id'");
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;
@@ -294,7 +294,7 @@ class global_class extends db_connect
 
     public function getCatregories()
     {
-        $query = $this->conn->prepare("SELECT c.*, COUNT(s.*) as total_store FROM `category` c LEFT JOIN `store` s ON c.category_id = s.category_id");
+        $query = $this->conn->prepare("SELECT c.*, COUNT(s.category_id) as total_store FROM `category` c LEFT JOIN `store` s ON c.category_id = s.category_id GROUP BY c.category_id");
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;
@@ -332,6 +332,24 @@ class global_class extends db_connect
     public function getUserDetails($id)
     {
         $query = $this->conn->prepare("SELECT * FROM `user` WHERE `user_id` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function getStores($categoryId)
+    {
+        $query = $this->conn->prepare("SELECT s.*, COUNT(rr.review) as total_reviews, SUM(rr.rating) as total_rating FROM `store` s LEFT JOIN `rating_reviews` as rr ON s.store_id = rr.store_id WHERE s.category_id = '$categoryId' AND s.status = '1' GROUP BY s.store_id");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function getStoreDetails($storeId)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `store` WHERE `store_id` = '$storeId'");
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;

@@ -4,6 +4,7 @@
 
 .categories-page-container .cpc-top-container {
   background-color: black;
+  position: relative;
 }
 
 .categories-page-container .cpc-top-container img {
@@ -16,9 +17,116 @@
   color: white;
   position: absolute;
   z-index: 10;
-  top: 30%;
+  top: 60px;
   left: 50%;
   transform: translate(-50%, 50%);
   font-size: 40px;
   font-weight: 600;
+}
+
+/*  */
+
+.establishment-pick-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*  */
+
+.listing-category {
+  margin: 30px;
+  margin-left: 15px;
+}
+
+.cpc-categories-container a {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  padding-top: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgb(192, 192, 192);
+  margin: 5px;
+  text-decoration: none;
+  color: #4b4b4b;
+  width: 300px;
+}
+
+.cpc-categories-container a:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+/*  */
+
+.establishment-container {
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.establishment-container .ec-content-container {
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgb(134, 134, 134);
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.eccc-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.bottom-btns-container {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.btn-estab-more-det {
+  background-color: #d64045;
+  color: white;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.rate-stars-container i {
+  color: rgb(255, 145, 0);
+}
+
+.eccc-right img {
+  background-color: rebeccapurple;
+  height: 150px;
+  width: 150px;
+}
+
+.nef {
+  width: 500px;
+}
+
+@media screen and (max-width: 990px) {
+  .establishment-pick-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ec-content-container {
+    justify-content: center;
+    margin: 0;
+    padding: 20px !important;
+  }
+
+  .establishment-container {
+    margin: 0;
+    margin-top: 50px;
+  }
+
+  .eccc-right {
+    margin-top: 20px;
+  }
 }
