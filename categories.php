@@ -69,7 +69,7 @@ if (isset($_GET['category'])) {
                                     <h5 class="establishment-name"><?= $storeRow['name'] ?></h5>
                                     <p class="establishment-address"><?= $storeRow['address'] ?></p>
                                     <div class="bottom-btns-container">
-                                        <a href="stablishment.php?str_id=<?= $storeRow['store_id'] ?>" class="btn-estab-more-det">More details</a>
+                                        <a href="establishment.php?str_id=<?= $storeRow['store_id'] ?>" class="btn-estab-more-det">More details</a>
                                         <div class="rate-stars-container">
                                             <?php
                                             $printed = 0;
