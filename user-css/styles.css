@@ -192,6 +192,33 @@
   color: white;
 }
 
+.search-bar-container {
+  position: relative;
+}
+
+.main-page-search-container #search-content-container {
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(46px);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page-search-container #search-content-container a {
+  color: black;
+  margin: 5px;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.main-page-search-container #search-content-container a:hover {
+  background-color: rgb(221, 221, 221);
+  text-align: none !important;
+}
+
 /* category */
 .main-categories-container {
   padding: 20px;

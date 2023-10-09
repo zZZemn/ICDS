@@ -381,4 +381,16 @@ class global_class extends db_connect
             return 400;
         }
     }
+
+    public function searchEstablishment($get)
+    {
+        $searchValue = $get['value'];
+        $category = $get['category'];
+
+        $query = $this->conn->prepare("SELECT * FROM `store` WHERE `category_id` = '$category' AND `name` LIKE '%$searchValue%'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
 }

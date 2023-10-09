@@ -15,8 +15,12 @@ $admin_db = new admin_class();
         <h1>Find what's best for you</h1>
         <h5>Look for the greatest places to dine, drink and shop around you.</h5>
         <div class="main-page-search-container">
-            <input type="text" id="search" class="main-search" placeholder="What are you lookin for?">
-            <select class="main-select-category">
+            <div class="search-bar-container">
+                <input type="text" id="search" class="main-search" placeholder="What are you lookin for?">
+                <div id="search-content-container">
+                </div>
+            </div>
+            <select class="main-select-category" id="selectedCategory">
                 <?php
                 $getCategory = $admin_db->admin_Get_Categories();
                 while ($category = $getCategory->fetch_array()) {
