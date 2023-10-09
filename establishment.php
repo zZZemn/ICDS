@@ -104,9 +104,9 @@ if (isset($_GET['str_id'])) {
                 <div class="mt-2">
                     <h5><i class="fa-solid fa-pen"></i>Reviews</h5>
                 </div>
-                <div>
-                    <button type="button" class="btn btn-dark" id="btnOpenAddReviewModal">Add Review</button>
-                </div>
+                <?=
+                ($isLogin) ? '<div><button type="button" class="btn btn-dark" id="btnOpenAddReviewModal">Add Review</button></div>' : '';
+                ?>
             </div>
         </div>
         <div class="reviews-container m-3">

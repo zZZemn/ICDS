@@ -15,10 +15,29 @@ $(document).ready(function () {
       data: {
         wtd: wtd,
         id: id,
-        photo: photo
+        photo: photo,
       },
       success: function (response) {
         console.log(response);
+        if (response == "200") {
+          Swal.fire({
+            icon: "success",
+            title: "Deleted",
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          }).then((result) => {
+            window.location.href = "dashboard.php";
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Somethin went wrong",
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          });
+        }
       },
     });
   });
