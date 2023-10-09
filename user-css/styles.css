@@ -49,7 +49,7 @@
 }
 
 .nav-links a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: black;
   margin: 3px;
   padding: 8px 12px;
@@ -69,6 +69,13 @@
   text-decoration: none;
   font-size: 13px;
   padding: 3px 10px;
+  text-decoration: none !important;
+}
+
+.a-login:hover {
+  text-align: none;
+  color: white;
+  background-color: #c9001b;
 }
 
 @media screen and (max-width: 730px) {
@@ -212,6 +219,7 @@
   margin: 5px;
   padding: 5px;
   padding-left: 10px;
+  text-decoration: none;
 }
 
 .main-page-search-container #search-content-container a:hover {
@@ -324,6 +332,10 @@
 .blogs-card-container .blog-card .blog-contents-container .blog-content-para {
   margin-top: 30px;
   font-size: 12px;
+}
+
+.brs-blogs-container a {
+  text-decoration: none !important;
 }
 
 /* footer main */

@@ -13,7 +13,7 @@ $admin_db = new admin_class();
     <img src="global-assets/assets-used-in-web/main-page.jpg">
     <div class="main-contents-container">
         <h1>Find what's best for you</h1>
-        <h5>Look for the greatest places to dine, drink and shop around you.</h5>
+        <h5>Look for the great places to dine, drink and shop around you.</h5>
         <div class="main-page-search-container">
             <div class="search-bar-container">
                 <input type="text" id="search" class="main-search" placeholder="What are you lookin for?">
@@ -42,7 +42,7 @@ $admin_db = new admin_class();
         $getCategory = $admin_db->admin_Get_Categories();
         while ($category = $getCategory->fetch_array()) {
         ?>
-            <a href="#" class="btn-category">
+            <a href="categories.php?category=<?= $category['category_id'] ?>" class="btn-category">
                 <?= $category['icon'] ?>
                 <p><?= $category['category'] ?></p>
             </a>
@@ -64,7 +64,7 @@ $admin_db = new admin_class();
         <div class="p-container about-container-content-container">
             <p>The Directory was a fatal experiment in weak executive powers; it was created in reaction to the puritanical dictatorship that had existed under the Reign of Terror of 1793–94, and it would end up yielding to the more disciplined dictatorship of Napoleon Bonaparte. The Directory suffered from widespread corruption.
                 Directories are a place to provide quick snapshots of a business: what it does, how it does it, where it's located, possibly even with a map link and a link to its website. In this day and age of fast information, users appreciate quick and coherent information. In computing, a directory structure is the way an operating system arranges files that are accessible to the user. Files are typically displayed in a hierarchical tree structure.</p>
-            <a href="#" class="read-more">Read More</a>
+            <a href="about-us.php" class="read-more">Read More</a>
         </div>
     </div>
 </div>
@@ -81,7 +81,7 @@ $admin_db = new admin_class();
                 <h5>EASY PATH TO FIND JOBS</h5>
                 <article>August 17, 2023</article>
                 <p class="blog-content-para">A job fair is an event where multiple recruiters, hiring managers and employers can meet with potential employees in one convenient, neutral venue, such as a school or college. These fairs are usually managed by third-party recruitment consultants.</p>
-                <a href="#" class="read-more">READ MORE -></a>
+                <a href="blogs.php" class="read-more">READ MORE -></a>
             </div>
         </div>
         <div class="blog-card">
@@ -91,7 +91,7 @@ $admin_db = new admin_class();
                 <h5>EASY PATH TO FIND JOBS</h5>
                 <article>August 17, 2023</article>
                 <p class="blog-content-para">A job fair is an event where multiple recruiters, hiring managers and employers can meet with potential employees in one convenient, neutral venue, such as a school or college. These fairs are usually managed by third-party recruitment consultants.</p>
-                <a href="#" class="read-more">READ MORE -></a>
+                <a href="blogs.php" class="read-more">READ MORE -></a>
             </div>
         </div>
         <div class="blog-card">
@@ -101,12 +101,14 @@ $admin_db = new admin_class();
                 <h5>EASY PATH TO FIND JOBS</h5>
                 <article>August 17, 2023</article>
                 <p class="blog-content-para">A job fair is an event where multiple recruiters, hiring managers and employers can meet with potential employees in one convenient, neutral venue, such as a school or college. These fairs are usually managed by third-party recruitment consultants.</p>
-                <a href="#" class="read-more">READ MORE -></a>
+                <a href="blogs.php" class="read-more">READ MORE -></a>
             </div>
         </div>
     </div>
-    <center>
-        <h5 class="read-more mt-4">Browse blogs >></h5>
+    <center class="brs-blogs-container">
+        <a href="blogs.php">
+            <h5 class="read-more mt-4">Browse blogs >></h5>
+        </a>
     </center>
 </div>
 
@@ -124,11 +126,10 @@ $admin_db = new admin_class();
         </div>
         <div class="mpf-2nd">
             <h5>QUICK LINKS</h5>
-            <p><a href="#">Home</a></p>
-            <p><a href="#">Directory</a></p>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">Blogs</a></p>
-            <p><a href="#">Contacts</a></p>
+            <p><a href="index.php">Home</a></p>
+            <p><a href="categories.php">Directory</a></p>
+            <p><a href="about-us.php">About Us</a></p>
+            <p><a href="blogs.php">Blogs</a></p>
         </div>
         <div class="mpf-3rd">
             <h5>OTHERS</h5>

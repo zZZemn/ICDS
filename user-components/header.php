@@ -45,7 +45,7 @@ if (isset($_SESSION['user_id'])) {
             <a href="categories.php">Categories</a>
             <a href="about-us.php">About us</a>
             <a href="blogs.php">Blogs</a>
-            <a href="#">Contacts</a>
+            <!-- <a href="#">Contacts</a> -->
             <!-- <a href="#">Meet our Team</a> -->
         </div>
         <?= ($isLogin) ? '<a href="user-endpoints/logout.php" class="a-login">Logout | ' . $name . '</a>' : '<a href="login.php" class="a-login">Login</a>' ?>

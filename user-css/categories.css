@@ -49,6 +49,7 @@
   text-decoration: none;
   color: #4b4b4b;
   width: 300px;
+  text-decoration: none;
 }
 
 .cpc-categories-container a:hover {
@@ -93,6 +94,13 @@
   text-decoration: none;
   padding: 5px 20px;
   border-radius: 5px;
+  text-decoration: none !important;
+}
+
+.btn-estab-more-det:hover {
+  text-decoration: none !important;
+  color: white;
+  background-color: #e4464c;
 }
 
 .rate-stars-container i {
