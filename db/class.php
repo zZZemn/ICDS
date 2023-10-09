@@ -323,7 +323,7 @@ class global_class extends db_connect
 
     public function getCatregories()
     {
-        $query = $this->conn->prepare("SELECT c.*, COUNT(s.category_id) as total_store FROM `category` c LEFT JOIN `store` s ON c.category_id = s.category_id GROUP BY c.category_id");
+        $query = $this->conn->prepare("SELECT c.*, COUNT(s.category_id) as total_store FROM `category` c LEFT JOIN `store` s ON c.category_id = s.category_id AND s.status = 1 GROUP BY c.category_id");
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;
@@ -415,7 +415,7 @@ class global_class extends db_connect
         $searchValue = $get['value'];
         $category = $get['category'];
 
-        $query = $this->conn->prepare("SELECT * FROM `store` WHERE `category_id` = '$category' AND `name` LIKE '%$searchValue%'");
+        $query = $this->conn->prepare("SELECT * FROM `store` WHERE `category_id` = '$category' AND `status` = '1' AND `name` LIKE '%$searchValue%'");
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;
