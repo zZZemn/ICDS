@@ -97,6 +97,7 @@
   .nav-links a {
     width: 100%;
     text-align: center;
+    text-decoration: none !important;
   }
   .nav-links a:hover {
     background-color: rgb(235, 235, 235);
@@ -390,7 +391,5 @@
     margin: 0 !important;
   }
   /*  */
-
-
 }
 /* Main-Page-End */

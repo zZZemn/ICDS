@@ -1,5 +1,6 @@
 <?php
 include('db.php');
+date_default_timezone_set('Asia/Manila');
 
 class admin_class extends db_connect
 {
@@ -353,6 +354,31 @@ class global_class extends db_connect
         if ($query->execute()) {
             $result = $query->get_result();
             return $result;
+        }
+    }
+
+    public function getRatingAndReviews($storeId)
+    {
+        $query = $this->conn->prepare("SELECT rr.*, u.name FROM `rating_reviews` rr JOIN user u ON rr.user_id = u.user_id WHERE rr.store_id = '$storeId'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function submitRate($post)
+    {
+        $userId = $post['userId'];
+        $storeId = $post['storeId'];
+        $review = $post['review'];
+        $rateValue = $post['rateValue'];
+        $currentDateTime = date('Y-m-d H:i:s');
+
+        $query = $this->conn->prepare("INSERT INTO `rating_reviews`(`user_id`, `store_id`, `rating`, `review`, `date`) VALUES ('$userId','$storeId','$rateValue','$review', '$currentDateTime')");
+        if ($query->execute()) {
+            return 200;
+        } else {
+            return 400;
         }
     }
 }

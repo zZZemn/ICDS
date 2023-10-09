@@ -23,4 +23,6 @@ if (isset($_POST['name'], $_POST['username'], $_POST['password'], $_POST['repass
     } else {
         echo '400';
     }
+} elseif (isset($_POST['userId'], $_POST['storeId'], $_POST['review'], $_POST['rateValue'])) {
+    echo $db->submitRate($_POST);
 }

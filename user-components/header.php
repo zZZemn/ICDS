@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="user-css/blogs.css">
     <link rel="stylesheet" href="user-css/about-us.css">
     <link rel="stylesheet" href="user-css/establishment.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 

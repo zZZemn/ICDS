@@ -62,6 +62,93 @@
   background-color: #d64045;
 }
 
+/*  */
+.reviews-main-container {
+  padding: 0 !important;
+}
+
+.reviews-header-container {
+  position: absolute;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+}
+
+.reviews-header-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviews-header-container div i {
+  margin-right: 15px;
+}
+
+.reviews-container {
+  background-color: #ffafaf;
+  padding: 30px;
+  padding-top: 50px;
+}
+
+.reviews-container center h4,
+.reviews-container center p {
+  color: #b23a48;
+}
+
+/*  */
+
+.top-review-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.top-review-container h5 {
+  color: #4b4b4b;
+}
+
+.top-review-container .reviews-page-stars-container i {
+  color: rgb(255, 145, 0);
+}
+
+/* Review Modal */
+.add-review-frm-container {
+  background-color: rgba(0, 0, 0, 0.384);
+  width: 100% !important;
+  height: 100vh !important;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  overflow-y: hidden;
+
+  display: none;
+}
+
+.add-review-modal {
+  position: absolute !important;
+  top: 100px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px !important;
+  background-color: white;
+  z-index: 1000;
+}
+
+.user-rate-container button {
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.content-container-reviews {
+  flex-direction: column;
+}
+
+/*  */
+
+.btnRateStarsClick i {
+  color: rgb(255, 145, 0) !important;
+}
+
 @media screen and (max-width: 990px) {
   .epdc-right-container {
     margin-top: 40px !important;

@@ -53,6 +53,7 @@
 
 .cpc-categories-container a:hover {
   background-color: rgb(241, 241, 241);
+  text-decoration: none;
 }
 
 /*  */
