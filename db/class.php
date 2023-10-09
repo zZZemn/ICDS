@@ -247,6 +247,34 @@ class stores_class extends db_connect
             return 404;
         }
     }
+
+    public function deleteStore($post)
+    {
+        $wtd = $post['wtd'];
+        $id = $post['id'];
+        $photo = $post['photo'];
+
+        if ($wtd == 'link') {
+            $query = $this->conn->prepare("DELETE FROM `links` WHERE `id` = '$id'");
+            if ($query->execute()) {
+                return 200;
+            }
+        } elseif ($wtd == 'photo') {
+            $query = $this->conn->prepare("DELETE FROM `photos` WHERE `id` = '$id'");
+            $fileToDelete = __DIR__ . '/../global-assets/store-photos/' . $photo;
+            if (file_exists($fileToDelete)) {
+                if (unlink($fileToDelete) && $query->execute()) {
+                    return 200;
+                } else {
+                    return 400;
+                }
+            } else {
+                return $fileToDelete;
+            }
+        } else {
+            return 400;
+        }
+    }
 }
 
 

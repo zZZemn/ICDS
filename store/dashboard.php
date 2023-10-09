@@ -79,7 +79,7 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
                     <?php
                     while ($links = $getLinks->fetch_array()) {
                     ?>
-                        <li><?= $links['link_name'] ?>: <a href="<?= $links['link'] ?>"><?= $links['link'] ?></a></li>
+                        <li><?= $links['link_name'] ?>: <a href="<?= $links['link'] ?>"><?= $links['link'] ?></a><button type="button" class="btnDeleteStore" id="btnDelete" data-id="<?= $links['id'] ?>" data-wtd="link" data-photo=""><i class=" fa-solid fa-trash"></i></button></li>
                     <?php
                     }
                     ?>
@@ -101,7 +101,10 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
                 if ($getPhotos->num_rows > 0) {
                     while ($photo = $getPhotos->fetch_array()) {
                 ?>
-                        <img src="../global-assets/store-photos/<?= $photo['photo'] ?>">
+                        <div class="per-photo-container">
+                            <img src="../global-assets/store-photos/<?= $photo['photo'] ?>">
+                            <button type="button" class="btnDeleteStore btnDeleteImage" id="btnDelete" data-id="<?= $photo['id'] ?>" data-wtd="photo" data-photo="<?= $photo['photo'] ?>"><i class=" fa-solid fa-trash"></i></button>
+                        </div>
                     <?php
                     }
                 } else {
@@ -155,6 +158,7 @@ $categoryName = $admin_db->admin_Get_Category($store['category_id']);
     <script src="https://kit.fontawesome.com/c6c8edc460.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/delete.js"></script>
 </body>
 
 </html>

@@ -81,10 +81,21 @@ input {
   margin-top: 10px;
 }
 
+.btnDeleteStore {
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  color: rgb(209, 46, 17);
+}
+
 .pictures-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.per-photo-container {
+  position: relative;
 }
 
 .pictures-container img {
@@ -92,6 +103,12 @@ input {
   margin: 5px;
   height: 150px !important;
   width: 150px !important;
+}
+
+.btnDeleteImage {
+  position: absolute;
+  left: 6px;
+  top: 6px;
 }
 
 /*  */
