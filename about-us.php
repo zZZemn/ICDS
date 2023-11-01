@@ -81,7 +81,7 @@ $global_db = new global_class();
     </div>
     <div class="profile-container">
         <img class="cover-photo" src="global-assets/assets-used-in-web/blogs-img.png">
-        <img class="profile-picture" src="global-assets/assets-used-in-web/blog1.png">
+        <img class="profile-picture" src="global-assets/team-profile/chrisis paul.jpg">
         <div class="profile-details-container">
             <h5>CHRIS PAUL LEBRILLA</h5>
             <p>DOCUMENT</p>
