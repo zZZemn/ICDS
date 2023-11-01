@@ -65,17 +65,17 @@ $global_db = new global_class();
         <img class="cover-photo" src="global-assets/assets-used-in-web/blogs-img.png">
         <img class="profile-picture" src="global-assets/assets-used-in-web/blog1.png">
         <div class="profile-details-container">
-            <h5>JOMZ LLAMO</h5>
+            <h5>JOMAR LLAMO</h5>
             <p>PROGRAMMER</p>
             <a class="btn-more-details" href="#">MORE DETAILS</a>
         </div>
     </div>
     <div class="profile-container">
         <img class="cover-photo" src="global-assets/assets-used-in-web/blogs-img.png">
-        <img class="profile-picture" src="global-assets/assets-used-in-web/blog1.png">
+        <img class="profile-picture" src="global-assets/team-profile/luisa.gif">
         <div class="profile-details-container">
-            <h5>LUISA BASILISCO</h5>
-            <p>PROJECT MANAGER</p>
+            <h5>MA. LUISA BASILISCO</h5>
+            <p>DOCUMENT</p>
             <a class="btn-more-details" href="#">MORE DETAILS</a>
         </div>
     </div>
@@ -83,8 +83,8 @@ $global_db = new global_class();
         <img class="cover-photo" src="global-assets/assets-used-in-web/blogs-img.png">
         <img class="profile-picture" src="global-assets/team-profile/chrisis paul.jpg">
         <div class="profile-details-container">
-            <h5>CHRIS PAUL LEBRILLA</h5>
-            <p>DOCUMENT</p>
+            <h5>CHRISIS PAUL LEBRILLA</h5>
+            <p>RESEARCHER</p>
             <a class="btn-more-details" href="#">MORE DETAILS</a>
         </div>
     </div>
@@ -93,7 +93,7 @@ $global_db = new global_class();
         <img class="profile-picture" src="global-assets/assets-used-in-web/blog1.png">
         <div class="profile-details-container">
             <h5>MARY JANE BALANDAN</h5>
-            <p>DOCUMENT</p>
+            <p>RESEARCHER</p>
             <a class="btn-more-details" href="#">MORE DETAILS</a>
         </div>
     </div>
